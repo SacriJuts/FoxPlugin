@@ -1,0 +1,2 @@
+# FoxPlugin
+Plugin Minecraft
