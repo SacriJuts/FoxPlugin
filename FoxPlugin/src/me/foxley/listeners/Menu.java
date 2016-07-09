@@ -49,7 +49,7 @@ public class Menu implements Listener {
 				Inventory inv = Bukkit.createInventory(null, 18, "Menu des kits");
 				ItemStack woodsword = new ItemStack(Material.WOOD_SWORD, 1);
 				ItemMeta woodswordM = woodsword.getItemMeta();
-				woodswordM.setDisplayName(ChatColor.YELLOW + "Par défaut");
+				woodswordM.setDisplayName(ChatColor.YELLOW + "Par dï¿½faut");
 				woodsword.setItemMeta(woodswordM);
 				
 				inv.setItem(5, woodsword);
@@ -58,6 +58,31 @@ public class Menu implements Listener {
 			}
 		}
 		
+	}
+	
+	@EventHandler
+	public void onClickItemInInventory(InventoryClickEvent e) {
+		try {
+			Inventory inv = e.getClickedInventory();
+			String invTitle = inv.getTitle();
+			if (invTitle == "Menu des kits") {
+				Player p = inv.getViewers().get(0);
+				
+				if (e.getCurrentItem().getType() == Material.WOOD_SWORD) {
+					// set kit
+					p.closeInventory();
+				}
+			} else if (invTitle == "Menu de navigation") {
+				Player inv.getViewers().get(0);
+				if (e.getCurrentItem() == ) {
+					// set commande
+					p.closeInventory();
+				}
+				
+			}
+		} catch (NullPointerException e) {
+			
+		}
 	}
 	
 }
