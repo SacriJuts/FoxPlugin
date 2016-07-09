@@ -1,7 +1,7 @@
 name: FoxPlugin
 main: me.foxley.foxplugin.FoxPlugin
 version: 1.0
-author: Foxley
+author: Foxley, SacriJuts
 
 commands:
    ping:
