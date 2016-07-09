@@ -38,3 +38,8 @@ public class FoxPlugin extends JavaPlugin{
 	}
 	
 }
+
+void Yolo() {
+	
+	
+}
