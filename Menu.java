@@ -80,7 +80,7 @@ public class Menu implements Listener {
 	@EventHandler
 	public void onClickSword(PlayerInteractEvent e) {
 		try { 
-			if(e.getItem().getType().getItemMeta().getDisplayName() == "Kits"") {
+			if(e.getItem().getType().getItemMeta().getDisplayName() == "Kits) {
 				Player p = e.getPlayer();
 				if(e.getAction() == Action.RIGHT_CLICK_AIR) {
 					Inventory inv = Bukkit.createInventory(null, 27, "Menu des kits");
