@@ -8,5 +8,5 @@ commands:
       usage: /ping (player)
       description: Renvoie le ping du joueur
    giveObj:
-      usage: /giveObj (ObjectID)
+      usage: /giveObj (ObjectName)
       description: "Donne un objet précis"
