@@ -7,3 +7,6 @@ commands:
    ping:
       usage: /ping (player)
       description: Renvoie le ping du joueur
+   giveObj
+      usage: /giveObj (ObjectID)
+      description: "Donne un objet précis"
