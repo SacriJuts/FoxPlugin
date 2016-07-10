@@ -110,6 +110,9 @@ public class Menu implements Listener {
 			jeux.setItemMeta(jeuxM);
 			kits.setItemMeta(kitsM);
 			
+			kitsM.setDisplayName("Kits");
+			jeuxM.setDisplayName("Jeux");
+			
 			Inventory inv = e.getPlayer().getInventory();
 			
 			inv.setItem(0, kits);
