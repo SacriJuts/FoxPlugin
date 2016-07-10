@@ -1,0 +1,9 @@
+name: FoxPlugin
+main: me.foxley.foxplugin.FoxPlugin
+version: 1.0
+author: Foxley
+
+commands:
+   ping:
+      usage: /ping (player)
+      description: Renvoie le ping du joueur
