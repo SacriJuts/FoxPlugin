@@ -81,7 +81,7 @@ public class Menu implements Listener {
 	@EventHandler
 	public void onClickSword(PlayerInteractEvent e) {
 		try { 
-			if(e.getItem().getType().getItemMeta().getDisplayName() == "Kits) {
+			if(e.getItem().getType().getItemMeta().getDisplayName() == "Kits") {
 				Player p = e.getPlayer();
 				if(e.getAction() == Action.RIGHT_CLICK_AIR) {
 					Inventory inv = Bukkit.createInventory(null, 27, "Menu des kits");
@@ -105,6 +105,9 @@ public class Menu implements Listener {
 		FileConfiguration config = plugin.getConfig();
 		ItemStack kits = new ItemStack(Material.matchMaterial(config.getConfigurationSection("Data.Objects.Kits").getString("affiliated_object")));
 		ItemStack jeux = new ItemStack(Material.matchMaterial(config.getConfigurationSection("Data.Objects.Jeux").getString("affiliated_object")));
+		
+		jeux.setItemMeta(jeuxM);
+		kits.setItemMeta(kitsM);
 		
 		Inventory inv = e.getPlayer().getInventory();
 		
