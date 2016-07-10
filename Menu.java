@@ -57,16 +57,16 @@ public class Menu implements Listener {
 	@EventHandler
 	public void onClickCompass(PlayerInteractEvent e) {
 		try {
-			if(e.getItem().getType() == Material.COMPASS) {
+			if(e.getItem().getType().getItemMeta().getDisplayName() == "Jeux") {
 				Player p = e.getPlayer();
 				if(e.getAction() == Action.RIGHT_CLICK_AIR) {
-					Inventory inv = Bukkit.createInventory(null, 18, "Menu de navigation");
-					ItemStack banner = new ItemStack(Material.BANNER, 1, (byte) 5);
-					ItemMeta bannerM = banner.getItemMeta();
-					bannerM.setDisplayName(ChatColor.YELLOW + "The Towers !");
+					Inventory inv = Bukkit.createInventory(null, 27, "Menu de navigation");	//	27 = taille de l'inventaire
+					ItemStack banner = new ItemStack(Material.BANNER, 1, (byte) 5);			//	1 = nb d'objets | (byte) 5 = variante de l'objet
+					ItemMeta bannerM = banner.getItemMeta();								//	
+					bannerM.setDisplayName(ChatColor.YELLOW + "The Towers !");				//	
 					banner.setItemMeta(bannerM);
 					
-					inv.setItem(5, banner);
+					inv.setItem(13, banner);	// 13 = place de l'item dans l'inventaire
 					
 					
 					p.openInventory(inv);
@@ -80,16 +80,16 @@ public class Menu implements Listener {
 	@EventHandler
 	public void onClickSword(PlayerInteractEvent e) {
 		try { 
-			if(e.getItem().getType() == Material.DIAMOND_SWORD) {
+			if(e.getItem().getType().getItemMeta().getDisplayName() == "Kits"") {
 				Player p = e.getPlayer();
 				if(e.getAction() == Action.RIGHT_CLICK_AIR) {
-					Inventory inv = Bukkit.createInventory(null, 18, "Menu des kits");
+					Inventory inv = Bukkit.createInventory(null, 27, "Menu des kits");
 					ItemStack woodsword = new ItemStack(Material.WOOD_SWORD, 1);
 					ItemMeta woodswordM = woodsword.getItemMeta();
 					woodswordM.setDisplayName(ChatColor.YELLOW + "Par défaut");
 					woodsword.setItemMeta(woodswordM);
 					
-					inv.setItem(5, woodsword);
+					inv.setItem(13, woodsword);
 					
 					p.openInventory(inv);
 				}
