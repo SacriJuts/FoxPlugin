@@ -102,17 +102,19 @@ public class Menu implements Listener {
 	
 	@EventHandler
 	public void PlayerConnect(PlayerJoinEvent e) {
-		FileConfiguration config = plugin.getConfig();
-		ItemStack kits = new ItemStack(Material.matchMaterial(config.getConfigurationSection("Data.Objects.Kits").getString("affiliated_object")));
-		ItemStack jeux = new ItemStack(Material.matchMaterial(config.getConfigurationSection("Data.Objects.Jeux").getString("affiliated_object")));
-		
-		jeux.setItemMeta(jeuxM);
-		kits.setItemMeta(kitsM);
-		
-		Inventory inv = e.getPlayer().getInventory();
-		
-		inv.setItem(0, kits);
-		inv.setItem(1, jeux);
+		if (e.getPlayer().getWorld().getName() == "TheTowers") {
+			FileConfiguration config = plugin.getConfig();
+			ItemStack kits = new ItemStack(Material.matchMaterial(config.getConfigurationSection("Data.Objects.Kits").getString("affiliated_object")));
+			ItemStack jeux = new ItemStack(Material.matchMaterial(config.getConfigurationSection("Data.Objects.Jeux").getString("affiliated_object")));
+			
+			jeux.setItemMeta(jeuxM);
+			kits.setItemMeta(kitsM);
+			
+			Inventory inv = e.getPlayer().getInventory();
+			
+			inv.setItem(0, kits);
+			inv.setItem(1, jeux);
+		}
 	}
 	
 }
