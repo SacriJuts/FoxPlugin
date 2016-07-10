@@ -8,5 +8,16 @@ Kits:
       Items:
          potatoes: 16
    
-   
+Data:
+   Objects:
+      Kits:
+         ID: 0
+         affiliated_object: diamond_sword
+         name: Kits
+         description: Ouvre le menu des kits
+      Jeux:
+         ID: 1
+         affiliated_object: compass
+         name: Jeux
+         description: Ouvre le menu des jeux
       
