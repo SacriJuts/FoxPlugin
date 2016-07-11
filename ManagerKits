@@ -1,0 +1,60 @@
+package me.foxley.manager;
+
+import java.util.Set;
+
+import org.bukkit.Material;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.PlayerInventory;
+
+import me.foxley.foxplugin.FoxPlugin;
+
+public class ManagerKits {
+	
+	private FoxPlugin plugin;
+	private String chosenKit;
+	private Player p;
+	private PlayerInventory invP;
+	
+	public ManagerKits(FoxPlugin plugin, Player p, String kit) {
+		this.plugin = plugin;
+		this.chosenKit = kit;
+		this.p = p;
+		this.invP = p.getInventory();
+	}
+	
+	public ManagerKits(FoxPlugin plugin, Player p) {
+		this.plugin = plugin;
+		this.chosenKit = "Default";
+		this.p = p;
+		this.invP = p.getInventory();
+	}
+	
+	FileConfiguration config = plugin.getConfig();
+	Set<String> kitsList = config.getConfigurationSection("Kits").getKeys(false);
+	
+	for (String s : kitsList) {
+		if (s == chosenKit) {
+			ItemStack[] armor = {};
+			Set<String> armorList = config.getConfigurationSection("Kits." + s + ".Armor").getKeys(false);
+			for (String str : armorList) {
+				armor[armor.length] = new ItemStack(Material.matchMaterial(str));
+			}
+			
+			ItemStack[] hotbarItems = {};
+			
+			Set<String> itemsList = config.getConfigurationSection("Kits." + s + ".Items").getKeys(false);
+			for (String str : itemsList) {
+				hotbarItems[hotbarItems.length] = new ItemStack(Material.matchMaterial(str));
+			}
+			
+			invP.setArmorContents(armor);
+			invP.addItem(hotbarItems);
+			
+		}
+	}
+	
+	
+	
+}
