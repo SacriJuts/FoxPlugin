@@ -1,0 +1,65 @@
+Kits:
+   Default:
+      affiliated_object: leather_chestplate
+      name: "Par defaut"
+      Armor:
+         leather_helmet: 1
+         leather_chestplate: 1
+         leather_leggings: 1
+         leather_boots: 1
+      Items:
+         potatoes: 16
+   
+   Warrior:
+      affiliated_object: stone_sword
+      name: "Guerrier"
+      Armor:
+         leather_helmet: 1
+         chainmail_chestplate: 1
+         chainmail_leggings: 1
+         leather_boots: 1
+      Items:
+         potatoes: 16
+         stone_sword: 1
+   
+   
+   Archer:
+      affiliated_object: bow
+      name: "Archer"
+      Armor:
+         leather_helmet: 1
+         chainmail_chestplate: 1
+         chainmail_leggings: 1
+         leather_boots: 1
+      Items:
+         potatoes: 16
+         archer_bow: 1
+
+   
+Data:
+   MenuObjects:
+      Jeux:
+         affiliated_object: compass
+         name: "Jeux"
+         menu_name: "Menu principal"
+         menu_size: 27
+         
+      Kits:
+         affiliated_object: diamond_sword
+         name: "Kits"
+         menu_name: "Menu des kits"
+         menu_size: 27
+
+      Teams:
+         affiliated_object: banner
+         name: "Equipes"
+         menu_name: "Menu des equipes"
+         menu_size: 27
+         
+   KitObjects:
+      archer_bow:
+         item: bow
+         enchantment:
+            ARROW_DAMAGE: 1
+            ARROW_INFINITE: 1
+            DURABILITY: 1
